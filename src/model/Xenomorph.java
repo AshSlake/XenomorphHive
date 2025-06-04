@@ -20,6 +20,7 @@ public abstract class Xenomorph {
     protected int age;
     protected int strength;
     protected int intelligence;
+    protected int defense;
     protected XenoPhase phase; // Enum: EGG, FACEHUGGER, CHEST BUSTER, ADULT...
 
     //location
@@ -30,7 +31,6 @@ public abstract class Xenomorph {
     protected BehaviorState currentBehavior;// Enum:  IDLE, HUNTING, PATROLLING, DEFENDING, ...
 
     //status xeno
-    protected boolean isAlive;
     protected boolean isDead;
 
     //methods of xeno
@@ -39,10 +39,14 @@ public abstract class Xenomorph {
     }
 
     public void takeDamage(int damage){
-        this.health -= damage;
+        this.health -= Math.max(0, damage - this.defense);
         if (this.health <= 0){
             this.isDead = true;
         }
+    }
+
+    public int  attack(){
+        return this.strength + (this.intelligence / 2);
     }
 
     public void moveTo(int newX, int newY){
