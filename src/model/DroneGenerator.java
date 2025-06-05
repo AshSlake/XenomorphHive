@@ -7,6 +7,8 @@ import java.util.UUID;
 
 public class DroneGenerator extends Xenomorph {
 
+    private int enemiesKilled = 0;
+
     public DroneGenerator(int x, int y) {
         this.id = UUID.randomUUID();
         this.type = "Drone";
@@ -22,13 +24,30 @@ public class DroneGenerator extends Xenomorph {
         this.phase = XenoPhase.ADULT;
         this.isDead = false;
         this.currentBehavior = BehaviorState.PATROLLING;
-        this.dead();
     }
 
+    public int getEnemiesKilled() {
+        return enemiesKilled;
+    }
 
-    protected void dead() {
-        if (this.isDead) {
+    public void setEnemiesKilled(int enemiesKilled) {
+        this.enemiesKilled += enemiesKilled;
+    }
+
+    public void dead() {
+        if (this.health <= 0) {
+            this.isDead = true;
             System.out.println(this.type + " is dead");
         }
     }
+
+    public void toEvolve() {
+        if (this.isDead) return;
+        if (this.enemiesKilled >= 5) {
+            this.strength += 10;
+            this.defense += 5;
+            this.intelligence += 2;
+        }
+    }
+
 }

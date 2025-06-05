@@ -33,6 +33,8 @@ public abstract class Xenomorph {
     //status xeno
     protected boolean isDead;
 
+
+
     //methods of xeno
     public boolean isMature(){
         return phase == XenoPhase.ADULT || this.phase == XenoPhase.QUEEN;
