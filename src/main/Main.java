@@ -2,7 +2,9 @@ package main;
 
 import ecs.entities.Entity;
 import ecs.factory.EggFactory;
+import ecs.systems.HostIcubationSytem;
 import ecs.systems.IncubationSystem;
+import ecs.systems.LifeCycleSystem;
 import ecs.world.World;
 
 public class Main {
@@ -11,10 +13,15 @@ public class Main {
         World world = new World();
         // Adiciona um ovo inicial
         Entity egg = EggFactory.createRandom();
+        Entity egg2 = EggFactory.createRandom();
         world.addEntity(egg);
+        world.addEntity(egg2);
 
         // Registra sistemas
         world.addSystem(new IncubationSystem());
+        world.addSystem(new LifeCycleSystem());
+        world.addSystem(new HostIcubationSytem());
+
 
 
         // Loop principal

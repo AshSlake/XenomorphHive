@@ -89,6 +89,10 @@ public class Entity {
         return Map.copyOf(components); // Retorna uma cópia imutável
     }
 
+    public void update() {
+
+    }
+
     @Override
     public String toString() {
         return "Entity [id=" + id + ", components=" + components + ", removed=" + removed + "]";

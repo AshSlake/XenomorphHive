@@ -54,7 +54,7 @@ public class ComponentsTest {
         @DisplayName("Deve definir e recuperar hive ID")
         void shouldSetAndGetHiveId() {
             String hiveId = "HIVE_001";
-            xenomorphComponent.setHiveId(hiveId);
+            xenomorphComponent.setHiveId(Integer.valueOf(hiveId));
             assertEquals(hiveId, xenomorphComponent.getHiveId());
         }
     }
@@ -233,7 +233,7 @@ public class ComponentsTest {
             assertNull(xenoComp.getHiveId());
 
             // Testando com hive ID vazio
-            xenoComp.setHiveId("");
+            xenoComp.setHiveId(Integer.valueOf(""));
             assertEquals("", xenoComp.getHiveId());
         }
 
