@@ -9,7 +9,7 @@ public class PositionGenerator {
         return generateWithin(MAP_WIDTH, MAP_HEIGHT);
     }
 
-    // (opcional) gerar posição dentro de limites específicos
+    /**gerar posição dentro de limites específicos */
     public static float[] generateWithin(float maxX, float maxY) {
         float x = (float) (Math.random() * maxX);
         float y = (float) (Math.random() * maxY);

@@ -14,7 +14,7 @@ public class IncubationComponent implements Component {
 
     public void update(float deltaTime) {
         if (this.isIncubating) {
-            this.incubationTime += deltaTime;
+            this.elapsedTime += deltaTime;
         }
     }
 
@@ -53,5 +53,10 @@ public class IncubationComponent implements Component {
 
     public void setElapsedTime(float elapsedTime) {
         this.elapsedTime = elapsedTime;
+    }
+
+    @Override
+    public String toString() {
+        return "Incubation(time=" + elapsedTime + "/" + incubationTime + ")";
     }
 }

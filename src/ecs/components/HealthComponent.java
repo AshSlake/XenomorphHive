@@ -1,11 +1,11 @@
 package ecs.components;
 
 public class HealthComponent implements Component {
-    private int maxHealth;
-    private int currentHealth;
+    private float maxHealth;
+    private float currentHealth;
     private boolean isDead;
 
-    public HealthComponent(int maxHealth) {
+    public HealthComponent(float maxHealth) {
         this.maxHealth = maxHealth;
         this.currentHealth = maxHealth;
         this.isDead = false;
@@ -31,11 +31,11 @@ public class HealthComponent implements Component {
     }
 
     // Getters
-    public int getMaxHealth() {
+    public float getMaxHealth() {
         return maxHealth;
     }
 
-    public int getCurrentHealth() {
+    public float getCurrentHealth() {
         return currentHealth;
     }
 
@@ -44,11 +44,16 @@ public class HealthComponent implements Component {
     }
 
     // Optional setters
-    public void setMaxHealth(int maxHealth) {
+    public void setMaxHealth(float maxHealth) {
         this.maxHealth = maxHealth;
     }
 
-    public void setCurrentHealth(int currentHealth) {
+    public void setCurrentHealth(float currentHealth) {
         this.currentHealth = currentHealth;
+    }
+
+    @Override
+    public String toString() {
+        return "Health(" + currentHealth + ")";
     }
 }

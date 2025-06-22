@@ -1,13 +1,15 @@
 package ecs.factory;
 
-import com.sun.jdi.TypeComponent;
 import ecs.components.HealthComponent;
 import ecs.components.IncubationComponent;
+import ecs.components.LifecycleComponent;
 import ecs.components.PositionComponent;
 import ecs.entities.Entity;
+import model.enums.XenoPhase;
 import utils.PositionGenerator;
 
 public class EggFactory {
+    private static final XenoPhase xenoPhase = XenoPhase.EGG;
 
     public static Entity createRandom() {
         float[] position = PositionGenerator.generateRandomPosition();
@@ -16,9 +18,11 @@ public class EggFactory {
 
     public static Entity create(float x, float y) {
         Entity egg = new Entity();
+        egg.setIdTypeComponent(0);
         egg.addComponent(new PositionComponent(x, y));
         egg.addComponent(new IncubationComponent(10f));
-        egg.addComponent(new HealthComponent(10));
+        egg.addComponent(new LifecycleComponent(xenoPhase));
+        egg.addComponent(new HealthComponent(egg.getComponent(LifecycleComponent.class).getMaxHealth()));
         return egg;
     }
 }

@@ -13,4 +13,33 @@ public class PositionComponent implements Component{
         this.x = x;
         this.y = y;
     }
+
+    public float getX() {
+        return x;
+    }
+
+    public void setX(float x) {
+        this.x = x;
+    }
+
+    public float getY() {
+        return y;
+    }
+
+    public void setY(float y) {
+        this.y = y;
+    }
+
+    public float getRotation() {
+        return rotation;
+    }
+
+    public void setRotation(float rotation) {
+        this.rotation = rotation;
+    }
+
+    @Override
+    public String toString() {
+        return "PositionComponent [x=" + x + ", y=" + y + ", rotation=" + rotation + "]";
+    }
 }

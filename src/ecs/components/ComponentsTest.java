@@ -66,20 +66,20 @@ public class ComponentsTest {
         @Test
         @DisplayName("Deve calcular vida máxima correta para cada fase")
         void shouldCalculateCorrectMaxHealthForEachPhase() {
-            LifecycleComponent eggComponent = new LifecycleComponent(XenoPhase.EGG, 10f);
+            LifecycleComponent eggComponent = new LifecycleComponent(XenoPhase.EGG);
             // Testando através de reflexão ou métodos públicos que precisariam ser adicionados
             assertNotNull(eggComponent);
 
-            LifecycleComponent faceHuggerComponent = new LifecycleComponent(XenoPhase.FACEHUGGER, 25f);
+            LifecycleComponent faceHuggerComponent = new LifecycleComponent(XenoPhase.FACEHUGGER);
             assertNotNull(faceHuggerComponent);
 
-            LifecycleComponent chestBursterComponent = new LifecycleComponent(XenoPhase.CHESTBURSTER, 50f);
+            LifecycleComponent chestBursterComponent = new LifecycleComponent(XenoPhase.CHESTBURSTER);
             assertNotNull(chestBursterComponent);
 
-            LifecycleComponent adultComponent = new LifecycleComponent(XenoPhase.ADULT, 100f);
+            LifecycleComponent adultComponent = new LifecycleComponent(XenoPhase.ADULT);
             assertNotNull(adultComponent);
 
-            LifecycleComponent queenComponent = new LifecycleComponent(XenoPhase.QUEEN, 200f);
+            LifecycleComponent queenComponent = new LifecycleComponent(XenoPhase.QUEEN);
             assertNotNull(queenComponent);
         }
     }
@@ -167,7 +167,7 @@ public class ComponentsTest {
         @DisplayName("Todos os componentes devem implementar a interface Component")
         void allComponentsShouldImplementComponentInterface() {
             assertTrue(new XenomorphComponent(XenoType.DRONE) instanceof Component);
-            assertTrue(new LifecycleComponent(XenoPhase.EGG, 10f) instanceof Component);
+            assertTrue(new LifecycleComponent(XenoPhase.EGG) instanceof Component);
             assertTrue(new PheromoneComponent(5.0f, true) instanceof Component);
             assertTrue(new PositionComponent(0f, 0f) instanceof Component);
             assertTrue(new PhysicsComponent() instanceof Component);
@@ -187,7 +187,7 @@ public class ComponentsTest {
         void shouldCreateCompleteXenomorphEntityWithMultipleComponents() {
             // Simulando a criação de uma entidade com vários componentes
             XenomorphComponent xenoComp = new XenomorphComponent(XenoType.QUEEN);
-            LifecycleComponent lifecycleComp = new LifecycleComponent(XenoPhase.ADULT, 100f);
+            LifecycleComponent lifecycleComp = new LifecycleComponent(XenoPhase.ADULT);
             PositionComponent posComp = new PositionComponent(0f, 0f);
             PheromoneComponent pheromoneComp = new PheromoneComponent(15.0f, true);
 
