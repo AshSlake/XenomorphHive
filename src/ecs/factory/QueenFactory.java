@@ -10,7 +10,7 @@ public class QueenFactory {
     private static XenoPhase xenoPhase = XenoPhase.QUEEN;
     private static XenoType xenoType = XenoType.QUEEN;
 
-    public static Entity createQueen(float x, float y) {
+    public static Entity createQueen(int x, int y) {
 
         Entity quenn = new Entity();
         quenn.addComponent(new XenomorphComponent(xenoType,true,0));

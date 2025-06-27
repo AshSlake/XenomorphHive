@@ -34,8 +34,8 @@ public class IncubationSystem implements System{
                 //pega a posição do ovo
 
                 PositionComponent position = entity.getComponent(PositionComponent.class);
-                float x = (position != null) ? position.getX() : 0f;
-                float y = (position != null) ? position.getY() : 0f;
+                int x = (position != null) ? position.getX() : 0;
+                int y = (position != null) ? position.getY() : 0;
 
                 java.lang.System.out.println("[INCUBAÇÂO] Ovo eclodiu em Facehugger! Posição: (" + x + ", " + y + ")");
 

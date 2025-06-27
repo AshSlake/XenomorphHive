@@ -20,6 +20,9 @@ public class Entity {
     /** ID usado para identificar a entidade no sistema. */
     private int id;
 
+    /** nome da entidade */
+    private String name;
+
     /** ID usado para identificar o tipo da entidade*/
     private int idTypeComponent;
 
@@ -91,6 +94,22 @@ public class Entity {
 
     public void update() {
 
+    }
+
+    public static int getNextId() {
+        return nextId;
+    }
+
+    public static void setNextId(int nextId) {
+        Entity.nextId = nextId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     @Override

@@ -32,8 +32,8 @@ public class HostIcubationSytem implements System {
 
                 // pega a posição do hospedeiro
                 PositionComponent position = e.getComponent(PositionComponent.class);
-                float x = position.getX();
-                float y = position.getY();
+                int x = position.getX();
+                int y = position.getY();
 
                 java.lang.System.out.println("[GESTAÇÃO] 💥 Chestburster irrompeu do hospedeiro!  em (" + x + ", " + y + ")");
 

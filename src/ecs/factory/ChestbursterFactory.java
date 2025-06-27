@@ -10,7 +10,7 @@ public class ChestbursterFactory {
     private static XenoPhase xenoPhase = XenoPhase.CHESTBURSTER;
     private static XenoType xenoType = XenoType.CHESTBURSTER;
 
-    public static Entity createChestburster(float x, float y) {
+    public static Entity createChestburster(int x, int y) {
 
         Entity chestburster = new Entity();
         chestburster.addComponent(new XenomorphComponent(xenoType));

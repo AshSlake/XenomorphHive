@@ -1,45 +1,31 @@
 package ecs.components;
 
+import utils.PositionGenerator;
+
+
 /**
  * Armazena posição e orientação no espaço
  */
 
 public class PositionComponent implements Component{
+    private PositionGenerator position;
 
-    private float x,y;
-    private float rotation;
-
-    public PositionComponent(float x, float y) {
-        this.x = x;
-        this.y = y;
+    public PositionComponent(int x, int y) {
+        this.position = new PositionGenerator(x,y);
     }
 
-    public float getX() {
-        return x;
+    public PositionGenerator getPosition() {
+        return position;
+    }
+    public void setPosition(PositionGenerator position) {
+        this.position = position;
     }
 
-    public void setX(float x) {
-        this.x = x;
-    }
-
-    public float getY() {
-        return y;
-    }
-
-    public void setY(float y) {
-        this.y = y;
-    }
-
-    public float getRotation() {
-        return rotation;
-    }
-
-    public void setRotation(float rotation) {
-        this.rotation = rotation;
-    }
+    public int getX() {return position.x;}
+    public int getY() {return position.y;}
 
     @Override
     public String toString() {
-        return "PositionComponent [x=" + x + ", y=" + y + ", rotation=" + rotation + "]";
+        return "PositionComponent{" + "position=" + position + '}';
     }
 }

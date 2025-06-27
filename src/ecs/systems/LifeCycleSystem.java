@@ -33,8 +33,8 @@ public class LifeCycleSystem implements System {
             if (!life.isReadyToEvolve()) continue;
 
             PositionComponent pos = entity.getComponent(PositionComponent.class);
-            float x = pos != null ? pos.getX() : 0f;
-            float y = pos != null ? pos.getY() : 0f;
+            int x = pos != null ? pos.getX() : 0;
+            int y = pos != null ? pos.getY() : 0;
 
             XenoPhase currentPhase = life.getCurrentPhase();
             Entity next = null;

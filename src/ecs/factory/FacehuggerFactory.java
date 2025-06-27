@@ -10,7 +10,7 @@ public class FacehuggerFactory {
     private static final XenoPhase xenoPhase = XenoPhase.FACEHUGGER;
 
 
-    public static Entity createFacehugger(float x, float y) {
+    public static Entity createFacehugger(int x, int y) {
         Entity facehugger = new Entity();
         facehugger.addComponent(new XenomorphComponent(xenoType,true,0));
         facehugger.addComponent(new PositionComponent(x, y));

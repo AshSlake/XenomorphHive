@@ -5,6 +5,7 @@ import ecs.factory.EggFactory;
 import ecs.systems.HostIcubationSytem;
 import ecs.systems.IncubationSystem;
 import ecs.systems.LifeCycleSystem;
+import ecs.systems.MapRenderSystem;
 import ecs.world.World;
 
 public class Main {
@@ -21,6 +22,7 @@ public class Main {
         world.addSystem(new IncubationSystem());
         world.addSystem(new LifeCycleSystem());
         world.addSystem(new HostIcubationSytem());
+        world.addSystem(new MapRenderSystem());
 
 
 

@@ -11,11 +11,13 @@ public class EggFactory {
     private static final XenoType xenoType = XenoType.EGG;
 
     public static Entity createRandom() {
-        float[] position = PositionGenerator.generateRandomPosition();
-        return create(position[0], position[1]);
+        PositionGenerator cordenadas = PositionGenerator.ramdom(100,100);
+        int x = cordenadas.x;
+        int y = cordenadas.y;
+        return create(x,y);
     }
 
-    public static Entity create(float x, float y) {
+    public static Entity create(int x, int y) {
         Entity egg = new Entity();
         egg.setIdTypeComponent(0);
         egg.addComponent(new XenomorphComponent(xenoType,true,0));
